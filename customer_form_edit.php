@@ -1,14 +1,14 @@
-<?php
+<?php include('h.php');
     //1. เชื่อมต่อ database:
     include('condb.php');  //ไฟล์เชื่อมต่อกับ database ที่เราได้สร้างไว้ก่อนหน้าน้ี
     $a_id = $_GET["ID"];
     //2. query ข้อมูลจากตาราง:
     $sql = "SELECT * FROM customer_data WHERE a_id='$a_id' ";
-    $result = mysqli_query($con, $sql) or die ("Error in query: $sql " . mysqli_error());
-    $row = mysqli_fetch_array($result);
+    $result2 = mysqli_query($con, $sql) or die ("Error in query: $sql " . mysqli_error());
+    $row = mysqli_fetch_array($result2);
     extract($row);
-    ?>
-<?php include('h.php');
+  $result = mysqli_query($con, $sql);
+
 
 date_default_timezone_set('Asia/Bangkok');
 $date2 = date('d-m-Y H:i:s');
@@ -83,7 +83,7 @@ form-horizontal">
             <div class="col-sm-6" align="right">
             <p></p>
             <input type="hidden" name="a_id" value="<?php echo $a_id; ?>" />
-             <input type="hidden" name="newname" value="<?php echo $newname; ?>" />
+             <input type="hidden" name="img2" value="<?php echo $newname; ?>" />
               <button type="submit" class="btn btn-success" id="btn"> <span class="glyphicon glyphicon-saved"></span> แก้ไข  </button>      
             </div> 
           </div>
