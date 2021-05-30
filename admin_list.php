@@ -15,8 +15,11 @@
                       <td>a_user</td>
                       <td>a_pass</td>
                       <td>a_name</td>
+                      <td>เวลาที่บันทึก</td>
+                      <td>เวลาที่แก้ไข</td>
                       <td>edit</td>
                       <td>delete</td>
+                      
                     </tr>";
                 
                   while($row = mysqli_fetch_array($result)) {
@@ -25,11 +28,13 @@
                     echo "<td>" .$row["a_user"] .  "</td> ";
                     echo "<td>" .$row["a_pass"] .  "</td> ";
                     echo "<td>" .$row["a_name"] .  "</td> ";
+                    echo "<td>" .$row["datesave"] .  "</td> ";
+                    echo "<td>" .$row["datanow"].  "</td> ";
                     //แก้ไขข้อมูล
                     echo "<td><a href='admin.php?act=edit&ID=$row[0]' class='btn btn-warning btn-xs'>แก้ไข</a></td> ";
                     
                     //ลบข้อมูล
-                    echo "<td><a href='admin_form_del_db.php?ID=$row[0]' onclick=\"return confirm('Do you want to delete this record? !!!')\" class='btn btn-danger btn-xs'>ลบ</a></td> ";
+                    echo "<td><a href='admin_del.php?ID=$row[0]' onclick=\"return confirm('Do you want to delete this record? !!!')\" class='btn btn-danger btn-xs'>ลบ</a></td> ";
                   echo "</tr>";
                   }
                 echo "</table>";

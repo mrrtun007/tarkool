@@ -18,7 +18,7 @@
                     <?php include('menu_left.php'); ?>
                 </div>
 
-                <div class="col-md-6">
+                <div class="col-md-9">
         
                     <p></p>
                     <!-- แอด/เพิ่ม -->

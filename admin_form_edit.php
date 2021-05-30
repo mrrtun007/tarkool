@@ -8,11 +8,17 @@
     $row = mysqli_fetch_array($result);
     extract($row);
     ?>
-<?php include('h.php');?>
-<form  name="admin" action="admin_form_add_db.php" method="POST" id="admin" class="
+<?php include('h.php');
+date_default_timezone_set('Asia/Bangkok');
+$date2 = date('Y-m-d_H:i:s');
+
+?>
+
+<form  name="admin" action="admin_form_edit_db.php" method="POST" id="admin" class="
 form-horizontal">
 
-        <input type="hidden" name="a-id" value="<?php echo $a_id; ?>">
+        <input type="hidden" name="a_id" value="<?php echo $a_id; ?>">
+
           <div class="form-group">
             <div class="col-sm-6" align="left">
               <input  name="a_user" type="text" required class="form-control" id="a_user
@@ -22,7 +28,7 @@ form-horizontal">
           <p></p>
           <div class="form-group">
             <div class="col-sm-6" align="left">
-              <input  name="admin_pass" type="password" required class="form-control" id="a_pass"value="<?=$a_pass;?>" placeholder="password" pattern="^[a-zA-Z0-9]+$" minlength="2" />
+              <input  name="a_pass" type="password" required class="form-control" id="a_pass"value="<?=$a_pass;?>" placeholder="password" pattern="^[a-zA-Z0-9]+$" minlength="2" />
             </div>
           </div>
           <p></p>

@@ -1,5 +1,5 @@
 <?php include('h.php');?>
-<form  name="admin" action="customer_form_add_db.php" method="POST" id="admin" class="form-horizontal">
+<form  name="admin" action="customer_form_add_db.php" method="POST" enctype="multipart/form-data" id="admin" class="form-horizontal">
           <div class="form-group">
             <div class="col-sm-6" align="left">
               <input  name="a_storename" type="text" required class="form-control" id="a_storename" placeholder="ชื่อร้านลูกค้า" pattern="^[a-zA-Z0-9]+$" title="ภาษาอังกฤษหรือตัวเลขเท่านั้น" minlength="2"  />
@@ -14,7 +14,7 @@
           <p></p>
           <div class="form-group">
             <div class="col-sm-6" align="left">
-              <input  name="a_address" type="text" required class="form-control" id="a_address" placeholder="ที่อยู่" />
+              <textarea name="a_address" type="text" required class="form-control" id="a_address" placeholder="ที่อยู่" ><?php echo $a_address?></textarea>
             </div>
           </div>
           <p></p>
@@ -43,10 +43,12 @@
           </div>
           <P></P>
           <div class="form-group">
-            <div class="col-sm-6" align="left">
-              <input  name="a_logo" type="text" required class="form-control" id="a_logo" placeholder="โลโก้ร้าน" />
-            </div>
+          
+          <div class="col-sm-12">
+            <p> LOGO </p>
+            <input type="file" name="a_logo" id="a_logo" class="form-control" />
           </div>
+        </div>
           <P></P>
           <div class="form-group">
             <div class="col-sm-6" align="right">

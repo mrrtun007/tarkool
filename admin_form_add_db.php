@@ -1,6 +1,9 @@
 <?php
 include('condb.php');
+date_default_timezone_set('Asia/Bangkok');
+  $date1 = date('Ymd_His');
 
+  
 $a_user = $_POST['a_user'];
 $a_pass = $_POST['a_pass'];
 $a_name = $_POST['a_name'];
